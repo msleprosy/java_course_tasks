@@ -1,9 +1,6 @@
 /**
  * Created by veronika on 04.03.2019.
  */
-/**
- * Created by veronika on 04.03.2019.
- */
 import java.util.*;
 
 public class Sorter {
