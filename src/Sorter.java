@@ -6,9 +6,8 @@ import java.util.*;
 public class Sorter {
     static String directors[] = new String[]{"kubrick", "fincher", "polanski", "aronofski", "hitchcock", "coppola", "refn"};
     static List<String> lst = new ArrayList<>();
-
+    
     public static void main(String[] args) {
-        //Sorter srt = new Sorter();
         Collections.addAll(lst, directors);
         sortWithoutComparator(lst);
         for (String s : lst)
@@ -18,19 +17,12 @@ public class Sorter {
     public static void sortWithoutComparator(List<String> lst){
 
         Map<Character, Integer> priorityMap = new HashMap<>();
-        priorityMap.put('a', 1); priorityMap.put('b', 2);
-        priorityMap.put('c', 3); priorityMap.put('d', 4);
-        priorityMap.put('e', 5); priorityMap.put('f', 6);
-        priorityMap.put('g', 7); priorityMap.put('h', 8);
-        priorityMap.put('i', 9); priorityMap.put('j', 10);
-        priorityMap.put('k', 11); priorityMap.put('l', 12);
-        priorityMap.put('m', 13); priorityMap.put('n', 14);
-        priorityMap.put('o', 15); priorityMap.put('p', 16);
-        priorityMap.put('q', 17); priorityMap.put('r', 18);
-        priorityMap.put('s', 19); priorityMap.put('t', 20);
-        priorityMap.put('u', 21); priorityMap.put('v', 22);
-        priorityMap.put('w', 23); priorityMap.put('x', 24);
-        priorityMap.put('y', 25); priorityMap.put('z', 26);
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        Integer priority = 1;
+        for (char symbol : alphabet.toCharArray()) {
+            priorityMap.put(symbol, priority);
+            priority++;
+        }
 
         for (int i =0; i < lst.size(); i++) {
             for (int k = 0; k < lst.size() - 1; k++) {
